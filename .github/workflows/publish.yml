@@ -19,6 +19,8 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: "@nah-organization"
       - run: npm ci && npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.PACKAGE_INSTALL }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
