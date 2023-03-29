@@ -3,8 +3,6 @@ import { TypedEventEmitter } from '@8128-33550336/typedeventemitter';
 import { apidown, apidownValidator, apiup } from './serverapi';
 import { serverhost } from "./env";
 
-const signalingServer = `wss://${serverhost}/`;
-
 export class WebsocketWraper extends TypedEventEmitter<{
     message: [value: apidown];
     open: [];
@@ -48,7 +46,7 @@ export class WebsocketWraper extends TypedEventEmitter<{
         }));
     }
     static createFromId(id?: string, options?: { apiserver?: string; }) {
-        return new WebsocketWraper(new WebSocket(options?.apiserver ?? serverhost + id ?? ''));
+        return new WebsocketWraper(new WebSocket(`wss://${options?.apiserver ?? serverhost}/${id ?? ''}`));
     }
 }
 
