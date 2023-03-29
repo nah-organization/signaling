@@ -21,7 +21,7 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@8128-33550336/typedeventemitter": "^0.0.6",
+    "@8128-33550336/typedeventemitter": "^0.0.8",
     "superstruct": "^1.0.3"
   },
   "devDependencies": {
