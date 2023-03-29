@@ -1,7 +1,7 @@
 import { assert } from 'superstruct';
 import { TypedEventEmitter } from '@8128-33550336/typedeventemitter';
 import { apidown, apidownValidator, apiup } from './serverapi';
-import { serverhost } from "./env.json";
+import { serverhost } from "./env";
 
 const signalingServer = `wss://${serverhost}/`;
 
