@@ -1,0 +1,30 @@
+{
+  "name": "@nah-organization/signaling",
+  "version": "0.1.0",
+  "description": "signaling",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nah-organization/signaling.git"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "author": "8128-33550336",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@8128-33550336/typedeventemitter": "^0.0.2",
+    "superstruct": "^1.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
