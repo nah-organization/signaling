@@ -154,6 +154,9 @@ export class Room extends TypedEventEmitter<{
             data: message
         });
     }
+    close() {
+        this.#websocketwrapper.close();
+    }
     private openIfPossible() {
         if (!(this.#room && this.#userlist)) {
             return;

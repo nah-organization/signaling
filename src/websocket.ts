@@ -45,6 +45,9 @@ export class WebsocketWraper extends TypedEventEmitter<{
             data: payload
         }));
     }
+    close() {
+        this.#websocket.close();
+    }
     static createFromId(id?: string, options?: { apiserver?: string; WebSocketConstructor?: typeof WebSocket; }) {
         const WebSocketConstructor = options?.WebSocketConstructor ?? WebSocket;
         return new WebsocketWraper(new WebSocketConstructor(`wss://${options?.apiserver ?? serverhost}/${id ?? ''}`));
