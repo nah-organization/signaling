@@ -76,7 +76,7 @@ export class Room extends TypedEventEmitter<{
     #userlist: UserList | undefined = undefined;
     #room: string | undefined;
 
-    constructor(id?: string, options?: { apiserver?: string; }) {
+    constructor(id?: string, options?: { apiserver?: string; WebSocketConstructor?: typeof WebSocket; }) {
         super();
         this.#websocketwrapper = WebsocketWraper.createFromId(id, options);
 
