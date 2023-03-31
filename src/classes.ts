@@ -154,7 +154,7 @@ export class Room extends TypedEventEmitter<{
             data: message
         });
     }
-    close() {
+    leave() {
         this.#websocketwrapper.close();
     }
     private openIfPossible() {
