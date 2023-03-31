@@ -147,10 +147,10 @@ export class Room extends TypedEventEmitter<{
         const { userlist } = this.getValueOrThrow();
         return userlist.getMe();
     }
-    send(message: string, receivers: User[]): void {
+    send(message: string, receivers?: User[]): void {
         this.getValueOrThrow();
         this.#websocketwrapper.send('signal', {
-            receivers: receivers.map(user => user.id),
+            receivers: (receivers ?? this.getUsers()).map(user => user.id),
             data: message
         });
     }
